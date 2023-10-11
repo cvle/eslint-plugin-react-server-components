@@ -138,6 +138,13 @@ const foo = window.foo;`,
     ruleTester.run("HOOKS", rule, {
       valid: [
         {
+          code: `import {useId} from 'react';
+const Button = () => {
+  const id = useId();
+  return <div id={id} />;
+}`,
+        },
+        {
           code: 'const foo = "bar";',
         },
         {

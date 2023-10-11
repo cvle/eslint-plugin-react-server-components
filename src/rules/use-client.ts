@@ -16,7 +16,7 @@ import Components from "eslint-plugin-react/lib/util/Components";
 // @ts-expect-error
 import componentUtil from "eslint-plugin-react/lib/util/componentUtil";
 
-const HOOK_REGEX = /^use[A-Z]/;
+const HOOK_REGEX = /^use(?!Id$)[A-Z]/;
 const useClientRegex = /^('|")use client('|")/;
 const browserOnlyGlobals = Object.keys(globals.browser)
   .reduce<Set<Exclude<keyof typeof globals.browser, keyof typeof globals.node>>>(
